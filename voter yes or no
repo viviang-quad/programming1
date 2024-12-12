@@ -1,0 +1,39 @@
+int yes=0;
+int no=0;
+PFont noto;
+void setup(){
+  size(1050,800);
+  noto= createFont("Noto Sans",50);
+}
+void draw(){
+  background(0);
+  textSize(16);
+    fill(#8EB998);
+  text("Votes; "+ yes, 245,600);
+    fill(#B9605C);
+  text("Votes; "+ no, 770,600);
+  textSize(160);
+  textFont(noto);
+  fill(#8EB998);
+  text("✔",250,400);
+  fill(#B9605C);
+  text("❌",770,400);
+
+  String winner="";
+  if(yes>no){
+    winner="yes";
+  }else if(no>yes){
+    winner="no";
+  }
+  textSize(20);
+  fill(255);
+  text("Winner:"+winner,475,200);
+}
+void keyPressed(){
+  if(key == 'y'){
+    yes++;
+  }else if(key == 'n'){
+    no++;
+  }
+  }
+  
